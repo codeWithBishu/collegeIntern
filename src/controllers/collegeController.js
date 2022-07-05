@@ -22,6 +22,7 @@ const url_valid = function (url) {
 // ---=+=---------=+=----------=+=----------- [ Create College] ---=+=---------=+=----------=+=-----------//
 
 const createCollege = async function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin','*')
     try {
         let data = req.body
 
@@ -71,6 +72,7 @@ const createCollege = async function (req, res) {
 // ---=+=---------=+=----------=+=----------- [ Get College Detail] ---=+=---------=+=----------=+=-----------//
 
 let getCollegeDetails = async function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin','*')
     try {
         collegeName = req.query.collegeName
 

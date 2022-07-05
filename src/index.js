@@ -2,11 +2,13 @@
 
 const express = require('express')
 const bodyparser = require('body-parser')
+const multer = require('multer')
 const route = require('./routes/route.js')
 const {default: mongoose} = require('mongoose')
 const app = express()
 
 app.use(bodyparser.json())
+app.use(multer().any())
 app.use(bodyparser.urlencoded({extended: true}))
 
 // ---=+=---------=+=----------=+=----------- [ Connect MongoDB ] ---=+=---------=+=----------=+=-----------//
@@ -22,8 +24,8 @@ app.use('/', route)
 
 // ---=+=---------=+=----------=+=----------- [ Connect Port ] ---=+=---------=+=----------=+=-----------//
 
-app.listen(process.env.PORT || 3000, function () {
-    console.log('Express app running on port ' + (process.env.PORT || 3000))
+app.listen(process.env.PORT || 3001, function () {
+    console.log('Express app running on port ' + (process.env.PORT || 3001))
 });
 
 // ---=+=---------=+=----------=+=----------- ****************** ---=+=---------=+=----------=+=-----------//
